@@ -1,5 +1,7 @@
 /data
+/dataset
 /__pycache__
 /.venv
 /artifacts
 .env
+/old
