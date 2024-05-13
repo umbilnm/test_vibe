@@ -7,6 +7,7 @@ file = st.file_uploader("Загрузите файл", type=["png", "jpg"])
 
 if file is not None:
     start = time.time()
+    st.write(f'Данное приложение классифицирует фотографии на три класса: анкета из дейтинг приложения, фотография, скрин переписки')
     st.write("Вы загрузили файл:", file.name)
     data = file.getvalue()
     label = inference_cv_model(data)
