@@ -11,7 +11,8 @@ def inference_cv_model(data:bytes) -> str:
         pil_image = pil_image.convert('RGB')
     tensor_data = transformations(pil_image).unsqueeze(0).float()
     probs = cv_model(tensor_data)
+    print(probs.shape)
     label = probs.argmax().item()
-    return idx_to_class[label], probs
+    return idx_to_class[label], probs.flatten()[label].item()
 
 
