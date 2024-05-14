@@ -10,7 +10,8 @@ def inference_cv_model(data:bytes) -> str:
     if pil_image.mode != 'RGB':
         pil_image = pil_image.convert('RGB')
     tensor_data = transformations(pil_image).unsqueeze(0).float()
-    label = cv_model(tensor_data).argmax().item()
-    return idx_to_class[label]
+    probs = cv_model(tensor_data)
+    label = probs.argmax().item()
+    return idx_to_class[label], probs
 
 

@@ -1,6 +1,7 @@
 /data
 /dataset
 /__pycache__
+dataset.zip
 /.venv
 /artifacts
 .env
